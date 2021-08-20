@@ -12,5 +12,7 @@ namespace CompanyTrainingManagerApi.Entities
         {
 
         }
+
+        public DbSet<Address> Addresses { get; set; }
     }
 }
