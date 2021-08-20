@@ -11,5 +11,7 @@ namespace CompanyTrainingManagerApi.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
         public string CompanyName { get; set; }
+
+        public virtual IEnumerable<TrainingDefinition> TrainingDefinitions { get; set; }
     }
 }

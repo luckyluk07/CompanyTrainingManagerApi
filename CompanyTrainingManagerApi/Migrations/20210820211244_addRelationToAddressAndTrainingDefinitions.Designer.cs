@@ -4,14 +4,16 @@ using CompanyTrainingManagerApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CompanyTrainingManagerApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210820211244_addRelationToAddressAndTrainingDefinitions")]
+    partial class addRelationToAddressAndTrainingDefinitions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,9 +82,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.Property<int>("AddressId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CoachId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -92,8 +91,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId");
-
-                    b.HasIndex("CoachId");
 
                     b.ToTable("TrainingsDefinitions");
                 });
@@ -106,20 +103,7 @@ namespace CompanyTrainingManagerApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CompanyTrainingManagerApi.Entities.Coach", "Coach")
-                        .WithMany("TrainingDefinitions")
-                        .HasForeignKey("CoachId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Address");
-
-                    b.Navigation("Coach");
-                });
-
-            modelBuilder.Entity("CompanyTrainingManagerApi.Entities.Coach", b =>
-                {
-                    b.Navigation("TrainingDefinitions");
                 });
 #pragma warning restore 612, 618
         }
