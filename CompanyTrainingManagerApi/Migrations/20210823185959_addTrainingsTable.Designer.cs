@@ -4,14 +4,16 @@ using CompanyTrainingManagerApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CompanyTrainingManagerApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210823185959_addTrainingsTable")]
+    partial class addTrainingsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,12 +88,7 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TrainingDefinitionId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TrainingDefinitionId");
 
                     b.ToTable("Trainings");
                 });
@@ -124,17 +121,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.ToTable("TrainingsDefinitions");
                 });
 
-            modelBuilder.Entity("CompanyTrainingManagerApi.Entities.Training", b =>
-                {
-                    b.HasOne("CompanyTrainingManagerApi.Entities.TrainingDefinition", "TrainingDefinition")
-                        .WithMany("Trainings")
-                        .HasForeignKey("TrainingDefinitionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TrainingDefinition");
-                });
-
             modelBuilder.Entity("CompanyTrainingManagerApi.Entities.TrainingDefinition", b =>
                 {
                     b.HasOne("CompanyTrainingManagerApi.Entities.Address", "Address")
@@ -157,11 +143,6 @@ namespace CompanyTrainingManagerApi.Migrations
             modelBuilder.Entity("CompanyTrainingManagerApi.Entities.Coach", b =>
                 {
                     b.Navigation("TrainingDefinitions");
-                });
-
-            modelBuilder.Entity("CompanyTrainingManagerApi.Entities.TrainingDefinition", b =>
-                {
-                    b.Navigation("Trainings");
                 });
 #pragma warning restore 612, 618
         }

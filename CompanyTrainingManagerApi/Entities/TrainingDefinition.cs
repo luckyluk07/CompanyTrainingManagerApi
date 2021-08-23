@@ -15,5 +15,6 @@ namespace CompanyTrainingManagerApi.Entities
         public virtual Address Address { get; set; }
         public int CoachId { get; set; }
         public virtual Coach Coach { get; set; }
+        public virtual IEnumerable<Training> Trainings { get; set; }
     }
 }
