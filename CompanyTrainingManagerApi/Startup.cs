@@ -1,4 +1,5 @@
 using CompanyTrainingManagerApi.Entities;
+using CompanyTrainingManagerApi.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +37,9 @@ namespace CompanyTrainingManagerApi
             //seeding empty database
             services.AddScoped<AppDataSeeder>();
 
+            //using middlewares
+            services.AddScoped<ExceptionHandlingMiddleware>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +51,8 @@ namespace CompanyTrainingManagerApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseHttpsRedirection();
 
