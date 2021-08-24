@@ -1,4 +1,5 @@
 ﻿using CompanyTrainingManagerApi.Entities;
+using CompanyTrainingManagerApi.Exceptions;
 using CompanyTrainingManagerApi.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,25 @@ namespace CompanyTrainingManagerApi.Services
         {
             _context = context;
         }
+
         public IEnumerable<Worker> GetAllWorkers()
         {
             var workers = _context.Workers
                                 .ToList();
             return workers;
+        }
+
+        public Worker GetWorkerByHisId(int workerId)
+        {
+            var worker = _context.Workers
+                            .FirstOrDefault(w => w.Id == workerId);
+
+            if(worker is null)
+            {
+                throw new NotFoundException("Worker not found");
+            }
+
+            return worker;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CompanyTrainingManagerApi.Exceptions;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace CompanyTrainingManagerApi.Middlewares
             try
               {
                 await next.Invoke(context);
+            }
+            catch(NotFoundException notFoundException)
+            {
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsync(notFoundException.Message);
             }
             catch(Exception e)
             {

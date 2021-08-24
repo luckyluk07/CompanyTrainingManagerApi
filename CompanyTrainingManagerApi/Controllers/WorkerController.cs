@@ -27,5 +27,12 @@ namespace CompanyTrainingManagerApi.Controllers
             var workers = _service.GetAllWorkers();
             return Ok(workers);
         }
+
+        [HttpGet("{workerId}")]
+        public ActionResult<Worker> GetById([FromRoute] int workerId)
+        {
+            var worker = _service.GetWorkerByHisId(workerId);
+            return Ok(worker);
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace CompanyTrainingManagerApi.Interfaces
     public interface IWorkerService
     {
         IEnumerable<Worker> GetAllWorkers();
+        Worker GetWorkerByHisId(int workerId);
     }
 }
