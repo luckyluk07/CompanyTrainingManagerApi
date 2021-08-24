@@ -47,6 +47,7 @@ namespace CompanyTrainingManagerApi
 
             //CRUD services to controllers
             services.AddScoped<IWorkerService, WorkerService>();
+            services.AddScoped<ITrainingDefinitionService, TrainingDefinitionService>();
 
         }
 

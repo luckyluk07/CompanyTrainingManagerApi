@@ -12,7 +12,7 @@ namespace CompanyTrainingManagerApi.Entities
         public string Surname { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime EmploymentDate { get; set; }
-        public string  DepertmentName { get; set; }
+        public string  DepartmentName { get; set; }
         public string JobTitle { get; set; }
 
         public virtual Address Address { get; set; }

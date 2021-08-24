@@ -75,7 +75,7 @@ namespace CompanyTrainingManagerApi.Services
                 throw new NotFoundException("Worker not found");
             }
 
-            worker.DepertmentName = dto.DepertmentName;
+            worker.DepartmentName = dto.DepartmentName;
             worker.JobTitle = dto.JobTitle;
 
             _context.SaveChanges();

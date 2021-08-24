@@ -12,9 +12,8 @@ namespace CompanyTrainingManagerApi.Models
         public string Surname { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime EmploymentDate { get; set; }
-        public string DepertmentName { get; set; }
+        public string DepartmentName { get; set; }
         public string JobTitle { get; set; }
-
         //address part
         public string Country { get; set; }
         public string City { get; set; }

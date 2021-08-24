@@ -137,7 +137,7 @@ namespace CompanyTrainingManagerApi
                     BirthDate = new DateTime(1990,5,7),
                     EmploymentDate = new DateTime(2019,3,3),
                     AddressId = 2,
-                    DepertmentName = "accountancy",
+                    DepartmentName = "accountancy",
                     JobTitle = "senior accountant",
                     Trainings = new List<Training>()
                     {
