@@ -1,5 +1,7 @@
 using CompanyTrainingManagerApi.Entities;
+using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Middlewares;
+using CompanyTrainingManagerApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +41,9 @@ namespace CompanyTrainingManagerApi
 
             //using middlewares
             services.AddScoped<ExceptionHandlingMiddleware>();
+
+            //CRUD services to controllers
+            services.AddScoped<IWorkerService, WorkerService>();
 
         }
 

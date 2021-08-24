@@ -11,7 +11,7 @@ namespace CompanyTrainingManagerApi.Middlewares
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
-            {
+              {
                 await next.Invoke(context);
             }
             catch(Exception e)
