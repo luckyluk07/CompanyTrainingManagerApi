@@ -13,5 +13,6 @@ namespace CompanyTrainingManagerApi.Interfaces
         Worker GetWorkerByHisId(int workerId);
         void DeleteWorkerByHisId(int workerId);
         int CreateWorkerWithNewAddress(CreateWorkerDto dto);
+        void UpdateWorkerById(int workerId, UpdateWorkerDto dto);
     }
 }

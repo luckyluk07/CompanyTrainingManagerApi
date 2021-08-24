@@ -50,5 +50,12 @@ namespace CompanyTrainingManagerApi.Controllers
 
             return Created($"api/worker/{workerId}", null);
         }
+
+        [HttpPut("{workerId}")]
+        public ActionResult Update([FromRoute] int workerId, [FromBody] UpdateWorkerDto dto)
+        {
+            _service.UpdateWorkerById(workerId, dto);
+            return Ok();
+        }
     }
 }

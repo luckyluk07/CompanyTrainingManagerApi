@@ -22,6 +22,8 @@ namespace CompanyTrainingManagerApi.MappingProfiles
                     HomeNumber = src.HomeNumber,
                     FlatNumber = src.FlatNumber
                 }));
+
+            CreateMap<UpdateWorkerDto, Worker>();
         }
     }
 }

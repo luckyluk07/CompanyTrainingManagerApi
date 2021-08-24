@@ -64,5 +64,21 @@ namespace CompanyTrainingManagerApi.Services
 
             return worker;
         }
+
+        public void UpdateWorkerById(int workerId, UpdateWorkerDto dto)
+        {
+            var worker = _context.Workers
+                            .FirstOrDefault(w => w.Id == workerId);
+
+            if(worker is null)
+            {
+                throw new NotFoundException("Worker not found");
+            }
+
+            worker.DepertmentName = dto.DepertmentName;
+            worker.JobTitle = dto.JobTitle;
+
+            _context.SaveChanges();
+        }
     }
 }
