@@ -10,5 +10,6 @@ namespace CompanyTrainingManagerApi.Interfaces
     {
         IEnumerable<Worker> GetAllWorkers();
         Worker GetWorkerByHisId(int workerId);
+        void DeleteWorkerByHisId(int workerId);
     }
 }

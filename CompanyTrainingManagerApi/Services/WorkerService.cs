@@ -17,6 +17,20 @@ namespace CompanyTrainingManagerApi.Services
             _context = context;
         }
 
+        public void DeleteWorkerByHisId(int workerId)
+        {
+            var worker = _context.Workers
+                            .FirstOrDefault(w => w.Id == workerId);
+
+            if(worker is null)
+            {
+                throw new NotFoundException("Worker not found");
+            }
+
+            _context.Remove(worker);
+            _context.SaveChanges();
+        }
+
         public IEnumerable<Worker> GetAllWorkers()
         {
             var workers = _context.Workers

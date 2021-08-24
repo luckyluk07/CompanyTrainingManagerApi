@@ -34,5 +34,12 @@ namespace CompanyTrainingManagerApi.Controllers
             var worker = _service.GetWorkerByHisId(workerId);
             return Ok(worker);
         }
+
+        [HttpDelete("{workerId}")]
+        public ActionResult Delete([FromRoute] int workerId)
+        {
+            _service.DeleteWorkerByHisId(workerId);
+            return NoContent();
+        }
     }
 }
