@@ -1,4 +1,5 @@
 ﻿using CompanyTrainingManagerApi.Entities;
+using CompanyTrainingManagerApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace CompanyTrainingManagerApi.Interfaces
         IEnumerable<Worker> GetAllWorkers();
         Worker GetWorkerByHisId(int workerId);
         void DeleteWorkerByHisId(int workerId);
+        int CreateWorkerWithNewAddress(CreateWorkerDto dto);
     }
 }

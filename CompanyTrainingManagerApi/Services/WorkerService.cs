@@ -1,6 +1,8 @@
-﻿using CompanyTrainingManagerApi.Entities;
+﻿using AutoMapper;
+using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Exceptions;
 using CompanyTrainingManagerApi.Interfaces;
+using CompanyTrainingManagerApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +13,22 @@ namespace CompanyTrainingManagerApi.Services
     public class WorkerService : IWorkerService
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public WorkerService(AppDbContext context)
+        public WorkerService(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
+        }
+
+        public int CreateWorkerWithNewAddress(CreateWorkerDto dto)
+        {
+            var worker = _mapper.Map<Worker>(dto);
+
+            _context.Workers.Add(worker);
+            _context.SaveChanges();
+
+            return worker.Id;
         }
 
         public void DeleteWorkerByHisId(int workerId)

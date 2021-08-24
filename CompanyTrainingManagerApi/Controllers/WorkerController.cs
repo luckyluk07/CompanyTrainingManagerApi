@@ -1,5 +1,6 @@
 ﻿using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Interfaces;
+using CompanyTrainingManagerApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -40,6 +41,14 @@ namespace CompanyTrainingManagerApi.Controllers
         {
             _service.DeleteWorkerByHisId(workerId);
             return NoContent();
+        }
+
+        [HttpPost]
+        public ActionResult Create([FromBody] CreateWorkerDto dto)
+        {
+            int workerId = _service.CreateWorkerWithNewAddress(dto);
+
+            return Created($"api/worker/{workerId}", null);
         }
     }
 }

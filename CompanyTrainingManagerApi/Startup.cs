@@ -42,6 +42,9 @@ namespace CompanyTrainingManagerApi
             //using middlewares
             services.AddScoped<ExceptionHandlingMiddleware>();
 
+            //using automapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             //CRUD services to controllers
             services.AddScoped<IWorkerService, WorkerService>();
 
