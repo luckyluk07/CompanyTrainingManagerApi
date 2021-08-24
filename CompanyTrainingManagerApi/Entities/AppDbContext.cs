@@ -18,5 +18,24 @@ namespace CompanyTrainingManagerApi.Entities
         public DbSet<TrainingDefinition> TrainingsDefinitions { get; set; }
         public DbSet<Training> Trainings { get; set; }
         public DbSet<Worker> Workers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Worker>()
+                .Property(w => w.Name)
+                .IsRequired();
+
+            modelBuilder.Entity<Worker>()
+                .Property(w => w.Surname)
+                .IsRequired();
+
+            modelBuilder.Entity<Coach>()
+                .Property(c => c.Name)
+                .IsRequired();
+
+            modelBuilder.Entity<Coach>()
+                .Property(c => c.Surname)
+                .IsRequired();
+        }
     }
 }
