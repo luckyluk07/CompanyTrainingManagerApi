@@ -4,14 +4,16 @@ using CompanyTrainingManagerApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CompanyTrainingManagerApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210824080019_addIsOnlineAttributeToTrainingDefinitions")]
+    partial class addIsOnlineAttributeToTrainingDefinitions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -162,21 +164,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.ToTable("Workers");
                 });
 
-            modelBuilder.Entity("TrainingWorker", b =>
-                {
-                    b.Property<int>("TrainingsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WorkersId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TrainingsId", "WorkersId");
-
-                    b.HasIndex("WorkersId");
-
-                    b.ToTable("TrainingWorker");
-                });
-
             modelBuilder.Entity("CompanyTrainingManagerApi.Entities.Training", b =>
                 {
                     b.HasOne("CompanyTrainingManagerApi.Entities.TrainingDefinition", "TrainingDefinition")
@@ -214,21 +201,6 @@ namespace CompanyTrainingManagerApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Address");
-                });
-
-            modelBuilder.Entity("TrainingWorker", b =>
-                {
-                    b.HasOne("CompanyTrainingManagerApi.Entities.Training", null)
-                        .WithMany()
-                        .HasForeignKey("TrainingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CompanyTrainingManagerApi.Entities.Worker", null)
-                        .WithMany()
-                        .HasForeignKey("WorkersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("CompanyTrainingManagerApi.Entities.Coach", b =>

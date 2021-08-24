@@ -17,5 +17,6 @@ namespace CompanyTrainingManagerApi.Entities
         public DbSet<Coach> Coaches { get; set; }
         public DbSet<TrainingDefinition> TrainingsDefinitions { get; set; }
         public DbSet<Training> Trainings { get; set; }
+        public DbSet<Worker> Workers { get; set; }
     }
 }

@@ -10,8 +10,8 @@ namespace CompanyTrainingManagerApi.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-
-        public int AddressId { get; set; }
+        public bool IsOnline { get; set; }
+        public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
         public int CoachId { get; set; }
         public virtual Coach Coach { get; set; }

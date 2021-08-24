@@ -14,5 +14,6 @@ namespace CompanyTrainingManagerApi.Entities
 
         public virtual TrainingDefinition TrainingDefinition { get; set; }
         public int TrainingDefinitionId { get; set; }
+        public ICollection<Worker> Workers { get; set; }
     }
 }
