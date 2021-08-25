@@ -30,6 +30,9 @@ namespace CompanyTrainingManagerApi.MappingProfiles
                     Surname = src.CoachSurname,
                     CompanyName = src.CoachCompanyName
                 }));
+
+            CreateMap<Training, GetTrainingDto>();
+            CreateMap<TrainingDefinition, GetTrainingDefinitionDto>();
         }
     }
 }

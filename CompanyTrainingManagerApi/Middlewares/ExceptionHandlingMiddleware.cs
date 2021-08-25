@@ -23,7 +23,8 @@ namespace CompanyTrainingManagerApi.Middlewares
             catch(Exception e)
             {
                 context.Response.StatusCode = 500;
-                await context.Response.WriteAsync("Unexpected exception!");
+                //await context.Response.WriteAsync("Unexpected exception!");
+                await context.Response.WriteAsync(e.Message);
             }
         }
     }
