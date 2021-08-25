@@ -4,6 +4,7 @@ using CompanyTrainingManagerApi.Exceptions;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,13 @@ namespace CompanyTrainingManagerApi.Services
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ILogger<TrainingService> _logger;
 
-        public TrainingService(AppDbContext context, IMapper mapper)
+        public TrainingService(AppDbContext context, IMapper mapper, ILogger<TrainingService> logger)
         {
             _context = context;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public int CreateTraining(int trainDefId, CreateTrainingDto dto)
@@ -32,6 +35,8 @@ namespace CompanyTrainingManagerApi.Services
 
             _context.Add(training);
             _context.SaveChanges();
+
+            _logger.LogInformation("Training creation succeeded");
 
             return training.Id;
         }
