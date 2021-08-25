@@ -3,6 +3,7 @@ using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Exceptions;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,16 +47,23 @@ namespace CompanyTrainingManagerApi.Services
 
         }
 
-        public IEnumerable<TrainingDefinition> GetAllTrainigDefinitions()
+        public IEnumerable<GetTrainingDefinitionDto> GetAllTrainigDefinitions()
         {
             var trainingDefinitions = _context.TrainingsDefinitions
+                                            .Include(t => t.Address)
+                                            .Include(t => t.Coach)
                                             .ToList();
-            return trainingDefinitions;
+
+            var trainingDefinitionsResults = _mapper.Map<IEnumerable<GetTrainingDefinitionDto>>(trainingDefinitions);
+
+            return trainingDefinitionsResults;
         }
 
-        public TrainingDefinition GetTrainingDefinitionByItsId(int trainingDefinitionId)
+        public GetTrainingDefinitionDto GetTrainingDefinitionByItsId(int trainingDefinitionId)
         {
             var trainingDefinition = _context.TrainingsDefinitions
+                                            .Include(t => t.Address)
+                                            .Include(t => t.Coach)
                                             .FirstOrDefault(t => t.Id == trainingDefinitionId);
 
             if(trainingDefinition is null)
@@ -63,7 +71,9 @@ namespace CompanyTrainingManagerApi.Services
                 throw new NotFoundException("Training definition not found");
             }
 
-            return trainingDefinition;
+            var trainingDefinitionResult = _mapper.Map<GetTrainingDefinitionDto>(trainingDefinition);
+
+            return trainingDefinitionResult;
         }
 
         public void UpdateTrainingDefinitionById(int trainingDefinitionId, UpdateTrainingDefinitionDto dto)

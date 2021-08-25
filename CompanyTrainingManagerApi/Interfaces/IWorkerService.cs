@@ -9,8 +9,8 @@ namespace CompanyTrainingManagerApi.Interfaces
 {
     public interface IWorkerService
     {
-        IEnumerable<Worker> GetAllWorkers();
-        Worker GetWorkerByHisId(int workerId);
+        IEnumerable<GetWorkerDto> GetAllWorkers();
+        GetWorkerDto GetWorkerByHisId(int workerId);
         void DeleteWorkerByHisId(int workerId);
         int CreateWorkerWithNewAddress(CreateWorkerDto dto);
         void UpdateWorkerById(int workerId, UpdateWorkerDto dto);

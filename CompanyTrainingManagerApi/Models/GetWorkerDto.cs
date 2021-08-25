@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace CompanyTrainingManagerApi.Models
 {
-    public class GetTrainingDefinitionDto
+    public class GetWorkerDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
-        public bool IsOnline { get; set; }
+        public string Surname { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime EmploymentDate { get; set; }
+        public string DepartmentName { get; set; }
+        public string JobTitle { get; set; }
         public Address Address { get; set; }
-        public CoachDto Coach { get; set; }
-        //public IEnumerable<GetTrainingDto> Trainings { get; set; }
     }
 }

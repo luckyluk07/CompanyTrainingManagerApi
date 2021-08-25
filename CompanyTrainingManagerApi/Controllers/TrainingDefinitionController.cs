@@ -20,7 +20,7 @@ namespace CompanyTrainingManagerApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<TrainingDefinition>> GetAll()
+        public ActionResult<IEnumerable<GetTrainingDefinitionDto>> GetAll()
         {
             var trainingDefinitions = _service.GetAllTrainigDefinitions();
 
@@ -28,7 +28,7 @@ namespace CompanyTrainingManagerApi.Controllers
         }
 
         [HttpGet("{trainingDefinitionId}")]
-        public ActionResult<TrainingDefinition> GetById([FromRoute] int trainingDefinitionId)
+        public ActionResult<GetTrainingDefinitionDto> GetById([FromRoute] int trainingDefinitionId)
         {
             var trainingDefinition = _service.GetTrainingDefinitionByItsId(trainingDefinitionId);
 

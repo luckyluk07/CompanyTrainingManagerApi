@@ -35,6 +35,8 @@ namespace CompanyTrainingManagerApi.MappingProfiles
             CreateMap<TrainingDefinition, GetTrainingDefinitionDto>();
 
             CreateMap<CreateTrainingDto, Training>();
+            CreateMap<Coach, CoachDto>();
+            CreateMap<Worker, GetWorkerDto>();
         }
     }
 }

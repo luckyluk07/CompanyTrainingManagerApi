@@ -12,6 +12,6 @@ namespace CompanyTrainingManagerApi.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public ICollection<Worker> Workers { get; set; }
+        //public ICollection<Worker> Workers { get; set; }
     }
 }

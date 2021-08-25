@@ -23,14 +23,14 @@ namespace CompanyTrainingManagerApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Worker>> GetAll()
+        public ActionResult<IEnumerable<GetWorkerDto>> GetAll()
         {
             var workers = _service.GetAllWorkers();
             return Ok(workers);
         }
 
         [HttpGet("{workerId}")]
-        public ActionResult<Worker> GetById([FromRoute] int workerId)
+        public ActionResult<GetWorkerDto> GetById([FromRoute] int workerId)
         {
             var worker = _service.GetWorkerByHisId(workerId);
             return Ok(worker);

@@ -9,9 +9,9 @@ namespace CompanyTrainingManagerApi.Interfaces
 {
     public interface ITrainingDefinitionService
     {
-        IEnumerable<TrainingDefinition> GetAllTrainigDefinitions();
-        TrainingDefinition GetTrainingDefinitionByItsId(int trainingDefinitionId);
-        int CreateTrainingDefinitionWithNewCoach(Models.CreateTrainingDefinitionDto dto);
+        IEnumerable<GetTrainingDefinitionDto> GetAllTrainigDefinitions();
+        GetTrainingDefinitionDto GetTrainingDefinitionByItsId(int trainingDefinitionId);
+        int CreateTrainingDefinitionWithNewCoach(CreateTrainingDefinitionDto dto);
         void DeleteTrainingDefinitionByItsId(int trainingDefinitionId);
         void UpdateTrainingDefinitionById(int trainingDefinitionId, UpdateTrainingDefinitionDto dto);
     }

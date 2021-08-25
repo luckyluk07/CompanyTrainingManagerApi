@@ -3,6 +3,7 @@ using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Exceptions;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,16 +46,21 @@ namespace CompanyTrainingManagerApi.Services
             _context.SaveChanges();
         }
 
-        public IEnumerable<Worker> GetAllWorkers()
+        public IEnumerable<GetWorkerDto> GetAllWorkers()
         {
             var workers = _context.Workers
+                                .Include(w => w.Address)
                                 .ToList();
-            return workers;
+
+            var workersResult = _mapper.Map<IEnumerable<GetWorkerDto>>(workers);
+
+            return workersResult;
         }
 
-        public Worker GetWorkerByHisId(int workerId)
+        public GetWorkerDto GetWorkerByHisId(int workerId)
         {
             var worker = _context.Workers
+                            .Include(w => w.Address)
                             .FirstOrDefault(w => w.Id == workerId);
 
             if(worker is null)
@@ -62,7 +68,9 @@ namespace CompanyTrainingManagerApi.Services
                 throw new NotFoundException("Worker not found");
             }
 
-            return worker;
+            var workerResult = _mapper.Map<GetWorkerDto>(worker);
+
+            return workerResult;
         }
 
         public void UpdateWorkerById(int workerId, UpdateWorkerDto dto)

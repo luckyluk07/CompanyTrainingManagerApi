@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CompanyTrainingManagerApi.Controllers
 {
-    [Route("api/trainingDef/{trainDefId}/[controller]")]
+    [Route("api/trainingDefinition/{trainDefId}/[controller]")]
     public class TrainingController : ControllerBase
     {
         private readonly ITrainingService _service;
@@ -40,7 +40,7 @@ namespace CompanyTrainingManagerApi.Controllers
         {
             var trainingId = _service.CreateTraining(trainDefId, dto);
 
-            return Created($"api/trainingDef/{trainDefId}/Training/{trainingId}", null);
+            return Created($"api/trainingDefinition/{trainDefId}/Training/{trainingId}", null);
         }
 
         [HttpDelete("{trainingId}")]
