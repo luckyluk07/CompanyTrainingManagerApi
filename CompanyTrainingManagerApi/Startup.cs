@@ -33,6 +33,9 @@ namespace CompanyTrainingManagerApi
 
             services.AddControllers();
 
+            //register swagger generator
+            services.AddSwaggerGen();
+
             //making db connection
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -56,6 +59,13 @@ namespace CompanyTrainingManagerApi
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AppDataSeeder seeder)
         {
             seeder.Seed();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+           {
+               c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+           });
 
             if (env.IsDevelopment())
             {
