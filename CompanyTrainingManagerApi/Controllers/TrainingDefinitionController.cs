@@ -35,10 +35,28 @@ namespace CompanyTrainingManagerApi.Controllers
             return Ok(trainingDefinition);
         }
 
-        //[HttpPost]
-        //public ActionResult Create([FromBody] CreateTrainingDefinitionDto dto)
-        //{
+        [HttpPost]
+        public ActionResult Create([FromBody] CreateTrainingDefinitionDto dto)
+        {
+            var trainingDefinitionId = _service.CreateTrainingDefinitionWithNewCoach(dto);
 
-        //}
+            return Created($"api/TrainingDefinition/{trainingDefinitionId}", null);
+        }
+
+        [HttpDelete("{trainingDefinitionId}")]
+        public ActionResult Delete([FromRoute] int trainingDefinitionId)
+        {
+            _service.DeleteTrainingDefinitionByItsId(trainingDefinitionId);
+
+            return NoContent();
+        }
+
+        [HttpPut("{trainingDefinitionId}")]
+        public ActionResult Update([FromRoute] int trainingDefinitionId, [FromBody] UpdateTrainingDefinitionDto dto)
+        {
+            _service.UpdateTrainingDefinitionById(trainingDefinitionId, dto);
+
+            return Ok();
+        }
     }
 }

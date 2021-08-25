@@ -23,7 +23,13 @@ namespace CompanyTrainingManagerApi.MappingProfiles
                     FlatNumber = src.FlatNumber
                 }));
 
-            CreateMap<UpdateWorkerDto, Worker>();
+            CreateMap<CreateTrainingDefinitionDto, TrainingDefinition>()
+                .ForMember(dest => dest.Coach, opt => opt.MapFrom(src => new Coach()
+                {
+                    Name = src.CoachName,
+                    Surname = src.CoachSurname,
+                    CompanyName = src.CoachCompanyName
+                }));
         }
     }
 }
