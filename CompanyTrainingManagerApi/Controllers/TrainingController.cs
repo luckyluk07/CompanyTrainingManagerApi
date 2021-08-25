@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/trainingDefinition/{trainDefId}/[controller]")]
+    [ApiController]
     public class TrainingController : ControllerBase
     {
         private readonly ITrainingService _service;
@@ -62,6 +63,11 @@ namespace CompanyTrainingManagerApi.Controllers
         [HttpPut("{trainingId}")]
         public ActionResult UpdateById([FromRoute] int trainDefId, [FromRoute] int trainingId, [FromBody] UpdateTrainingDto dto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             _service.UpdateTrainingById(trainDefId, trainingId, dto);
 
             return Ok();

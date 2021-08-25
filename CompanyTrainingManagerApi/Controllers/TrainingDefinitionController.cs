@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class TrainingDefinitionController : ControllerBase
     {
         private readonly ITrainingDefinitionService _service;

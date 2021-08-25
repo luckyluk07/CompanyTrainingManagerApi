@@ -93,9 +93,9 @@ namespace CompanyTrainingManagerApi.Services
                 throw new NotFoundException("Training not found");
             }
 
-            training.EndDate = dto.EndDate;
-            training.StartDate = dto.StartDate;
-            training.ExpirationDate = dto.ExpirationDate;
+            training.EndDate = dto.EndDate.Value;
+            training.StartDate = dto.StartDate.Value;
+            training.ExpirationDate = dto.ExpirationDate.Value;
 
             _context.SaveChanges();
         }

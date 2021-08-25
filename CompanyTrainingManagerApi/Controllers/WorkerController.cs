@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class WorkerController : ControllerBase
     {
         private readonly AppDbContext _context;

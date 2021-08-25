@@ -88,3 +88,48 @@
 2021-08-25 19:05:54.9326 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
 2021-08-25 19:05:54.9563 Info Configuration initialized.
 2021-08-25 19:05:54.9563 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-25 19:26:16.9445 Info Message Template Auto Format enabled
+2021-08-25 19:26:16.9823 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-25 19:26:17.0882 Info Adding target FileTarget(Name=alldata)
+2021-08-25 19:26:17.0882 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-25 19:26:17.1450 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-25 19:26:17.1855 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-25 19:26:17.2036 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-25 19:26:17.2229 Info Configuration initialized.
+2021-08-25 19:26:17.2229 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-25 19:35:45.1338 Info Message Template Auto Format enabled
+2021-08-25 19:35:45.1547 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-25 19:35:45.2549 Info Adding target FileTarget(Name=alldata)
+2021-08-25 19:35:45.2580 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-25 19:35:45.2753 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-25 19:35:45.3182 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-25 19:35:45.3347 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-25 19:35:45.3478 Info Configuration initialized.
+2021-08-25 19:35:45.3478 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-25 19:37:44.1586 Info Message Template Auto Format enabled
+2021-08-25 19:37:44.1834 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-25 19:37:44.2740 Info Adding target FileTarget(Name=alldata)
+2021-08-25 19:37:44.2740 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-25 19:37:44.2928 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-25 19:37:44.3266 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-25 19:37:44.3399 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-25 19:37:44.3636 Info Configuration initialized.
+2021-08-25 19:37:44.3636 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-25 19:40:52.4266 Info Message Template Auto Format enabled
+2021-08-25 19:40:52.4463 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-25 19:40:52.5492 Info Adding target FileTarget(Name=alldata)
+2021-08-25 19:40:52.5492 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-25 19:40:52.5719 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-25 19:40:52.6075 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-25 19:40:52.6179 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-25 19:40:52.6403 Info Configuration initialized.
+2021-08-25 19:40:52.6403 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-25 19:42:02.0558 Info Message Template Auto Format enabled
+2021-08-25 19:42:02.0757 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-25 19:42:02.1825 Info Adding target FileTarget(Name=alldata)
+2021-08-25 19:42:02.1825 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-25 19:42:02.2013 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-25 19:42:02.2363 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-25 19:42:02.2501 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-25 19:42:02.2672 Info Configuration initialized.
+2021-08-25 19:42:02.2672 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
