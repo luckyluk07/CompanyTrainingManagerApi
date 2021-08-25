@@ -11,5 +11,9 @@ namespace CompanyTrainingManagerApi.Interfaces
     {
         IEnumerable<GetTrainingDto> GetAllByDefId(int trainDefId);
         GetTrainingDto GetTrainingByItsId(int trainDefId, int trainingId);
+        int CreateTraining(int trainDefId, CreateTrainingDto dto);
+        void DeleteTrainingByItsId(int trainDefId, int trainingId);
+        void DeleteAllTrainings(int trainDefId);
+        void UpdateTrainingById(int trainDefId, int trainingId, UpdateTrainingDto dto);
     }
 }

@@ -33,6 +33,8 @@ namespace CompanyTrainingManagerApi.MappingProfiles
 
             CreateMap<Training, GetTrainingDto>();
             CreateMap<TrainingDefinition, GetTrainingDefinitionDto>();
+
+            CreateMap<CreateTrainingDto, Training>();
         }
     }
 }
