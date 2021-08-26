@@ -51,6 +51,13 @@ namespace CompanyTrainingManagerApi
                 _context.Workers.AddRange(workers);
                 _context.SaveChanges();
             }
+
+            if (!_context.Roles.Any())
+            {
+                var roles = getRoles();
+                _context.Roles.AddRange(roles);
+                _context.SaveChanges();
+            }
         }
 
         private IEnumerable<Address> getAddresses()
@@ -153,6 +160,27 @@ namespace CompanyTrainingManagerApi
             };
 
             return workers;
+        }
+
+        private IEnumerable<Role> getRoles()
+        {
+            var roles = new List<Role>()
+            {
+                new Role()
+                {
+                    Name = "User"
+                },
+                new Role()
+                {
+                    Name = "HrManager"
+                },
+                new Role()
+                {
+                    Name = "Admin"
+                }
+            };
+
+            return roles;
         }
     }
 }
