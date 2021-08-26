@@ -1,4 +1,5 @@
-﻿using CompanyTrainingManagerApi.Interfaces;
+﻿using CompanyTrainingManagerApi.Exceptions;
+using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class AccountController : ControllerBase
     {
         private readonly IAccountService _service;

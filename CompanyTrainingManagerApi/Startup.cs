@@ -1,7 +1,11 @@
 using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Middlewares;
+using CompanyTrainingManagerApi.Models;
+using CompanyTrainingManagerApi.Models.Validators;
 using CompanyTrainingManagerApi.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,7 +36,7 @@ namespace CompanyTrainingManagerApi
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation();
 
             //register swagger generator
             services.AddSwaggerGen();
@@ -57,6 +61,9 @@ namespace CompanyTrainingManagerApi
 
             //ready functionality to services
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+            //validators
+            services.AddScoped<IValidator<RegisterAccountDto>, UserRegistrationValidator>();
 
         }
 
