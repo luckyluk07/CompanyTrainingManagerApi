@@ -6,6 +6,7 @@ using CompanyTrainingManagerApi.Models.Validators;
 using CompanyTrainingManagerApi.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,15 +17,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CompanyTrainingManagerApi
 {
     public class Startup
     {
+        public const string SECRET = "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,6 +41,27 @@ namespace CompanyTrainingManagerApi
         {
 
             services.AddControllers().AddFluentValidation();
+
+            #region Authentication
+            var key = Encoding.ASCII.GetBytes(SECRET);
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            #endregion
 
             //register swagger generator
             services.AddSwaggerGen();
@@ -87,6 +112,8 @@ namespace CompanyTrainingManagerApi
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 

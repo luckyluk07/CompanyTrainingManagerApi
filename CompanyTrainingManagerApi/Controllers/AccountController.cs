@@ -27,5 +27,13 @@ namespace CompanyTrainingManagerApi.Controllers
 
             return Ok();
         }
+
+        [HttpPost("login")]
+        public ActionResult GenerateJWT([FromBody] LoginAccountDto dto)
+        {
+            var token = _service.GenerateJwt(dto);
+
+            return Ok(token);
+        }
     }
 }

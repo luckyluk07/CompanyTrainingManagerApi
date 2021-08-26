@@ -9,5 +9,6 @@ namespace CompanyTrainingManagerApi.Interfaces
     public interface IAccountService
     {
         void RegisterUser(RegisterAccountDto dto);
+        string GenerateJwt(LoginAccountDto dto);
     }
 }

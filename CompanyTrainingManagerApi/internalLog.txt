@@ -357,3 +357,39 @@
 2021-08-26 14:25:10.2361 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
 2021-08-26 14:25:10.2564 Info Configuration initialized.
 2021-08-26 14:25:10.2564 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-26 14:42:59.7970 Info Message Template Auto Format enabled
+2021-08-26 14:42:59.8285 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-26 14:42:59.9550 Info Adding target FileTarget(Name=alldata)
+2021-08-26 14:42:59.9550 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-26 14:42:59.9974 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-26 14:43:00.0520 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-26 14:43:00.0738 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-26 14:43:00.0976 Info Configuration initialized.
+2021-08-26 14:43:00.1044 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-26 15:42:18.5450 Info Message Template Auto Format enabled
+2021-08-26 15:42:18.5831 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-26 15:42:18.7235 Info Adding target FileTarget(Name=alldata)
+2021-08-26 15:42:18.7235 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-26 15:42:18.7827 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-26 15:42:18.8086 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-26 15:42:18.8086 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-26 15:42:18.8336 Info Configuration initialized.
+2021-08-26 15:42:18.8370 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-26 15:47:27.5571 Info Message Template Auto Format enabled
+2021-08-26 15:47:27.6132 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-26 15:47:27.8018 Info Adding target FileTarget(Name=alldata)
+2021-08-26 15:47:27.8050 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-26 15:47:27.8331 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-26 15:47:27.8827 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-26 15:47:27.9013 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-26 15:47:27.9349 Info Configuration initialized.
+2021-08-26 15:47:27.9349 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2021-08-26 15:49:04.9791 Info Message Template Auto Format enabled
+2021-08-26 15:49:05.0112 Info Loading assembly: NLog.Web.AspNetCore
+2021-08-26 15:49:05.1361 Info Adding target FileTarget(Name=alldata)
+2021-08-26 15:49:05.1361 Info Adding target FileTarget(Name=C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web)
+2021-08-26 15:49:05.1587 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'otherFile-web' not found for logging rule: *.
+2021-08-26 15:49:05.1826 Info Validating config: TargetNames=alldata, ConfigItems=45, FilePath=C:\programming\api_practice\second\CompanyTrainingManagerApi\CompanyTrainingManagerApi\bin\Debug\net5.0\NLog.config
+2021-08-26 15:49:05.1826 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: C:\programming\api_practice\logs_ewidencja_szkolen\otherFile-web
+2021-08-26 15:49:05.2242 Info Configuration initialized.
+2021-08-26 15:49:05.2242 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
