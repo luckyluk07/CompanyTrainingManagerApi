@@ -57,7 +57,7 @@ namespace CompanyTrainingManagerApi.Services
             var token = new JwtSecurityToken(issuer:"Bearer",
                 audience:"Bearer",
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(15),
+                expires: DateTime.UtcNow.AddMinutes(2),
                 signingCredentials: cred);
 
             var tokenHandler = new JwtSecurityTokenHandler();

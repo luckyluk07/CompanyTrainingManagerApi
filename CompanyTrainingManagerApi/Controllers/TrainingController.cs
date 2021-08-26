@@ -1,6 +1,7 @@
 ﻿using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/trainingDefinition/{trainDefId}/[controller]")]
     [ApiController]
+    [Authorize(Roles = "HrManager, Admin")]
+
     public class TrainingController : ControllerBase
     {
         private readonly ITrainingService _service;

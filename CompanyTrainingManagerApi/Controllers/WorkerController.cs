@@ -1,6 +1,7 @@
 ﻿using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,6 +13,7 @@ namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WorkerController : ControllerBase
     {
         private readonly AppDbContext _context;

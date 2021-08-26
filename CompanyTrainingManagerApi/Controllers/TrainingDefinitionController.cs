@@ -1,6 +1,7 @@
 ﻿using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace CompanyTrainingManagerApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "HrManager, Admin")]
     public class TrainingDefinitionController : ControllerBase
     {
         private readonly ITrainingDefinitionService _service;
@@ -21,6 +23,7 @@ namespace CompanyTrainingManagerApi.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult<IEnumerable<GetTrainingDefinitionDto>> GetAll()
         {
             var trainingDefinitions = _service.GetAllTrainigDefinitions();
