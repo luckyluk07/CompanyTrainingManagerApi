@@ -5,6 +5,7 @@ using CompanyTrainingManagerApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -48,10 +49,14 @@ namespace CompanyTrainingManagerApi
             //using automapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //CRUD services to controllers
+            //own CRUD services to controllers
             services.AddScoped<IWorkerService, WorkerService>();
             services.AddScoped<ITrainingDefinitionService, TrainingDefinitionService>();
             services.AddScoped<ITrainingService, TrainingService>();
+            services.AddScoped<IAccountService, AccountService>();
+
+            //ready functionality to services
+            services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
         }
 
