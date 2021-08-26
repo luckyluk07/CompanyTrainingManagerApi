@@ -18,5 +18,8 @@ namespace CompanyTrainingManagerApi.Entities
         public virtual Address Address { get; set; }
         public int AddressId { get; set; }
         public ICollection<Training> Trainings { get; set; }
+
+        public int? IsAUserId { get; set; }
+        public virtual User IsAUser { get; set; }
     }
 }

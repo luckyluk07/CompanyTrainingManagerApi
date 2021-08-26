@@ -4,14 +4,16 @@ using CompanyTrainingManagerApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CompanyTrainingManagerApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210826093014_addUsersTable")]
+    partial class addUsersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -163,15 +165,10 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Surname")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
@@ -195,9 +192,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.Property<DateTime>("EmploymentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("IsAUserId")
-                        .HasColumnType("int");
-
                     b.Property<string>("JobTitle")
                         .HasColumnType("nvarchar(max)");
 
@@ -212,8 +206,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId");
-
-                    b.HasIndex("IsAUserId");
 
                     b.ToTable("Workers");
                 });
@@ -261,17 +253,6 @@ namespace CompanyTrainingManagerApi.Migrations
                     b.Navigation("Coach");
                 });
 
-            modelBuilder.Entity("CompanyTrainingManagerApi.Entities.User", b =>
-                {
-                    b.HasOne("CompanyTrainingManagerApi.Entities.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-                });
-
             modelBuilder.Entity("CompanyTrainingManagerApi.Entities.Worker", b =>
                 {
                     b.HasOne("CompanyTrainingManagerApi.Entities.Address", "Address")
@@ -280,13 +261,7 @@ namespace CompanyTrainingManagerApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CompanyTrainingManagerApi.Entities.User", "IsAUser")
-                        .WithMany()
-                        .HasForeignKey("IsAUserId");
-
                     b.Navigation("Address");
-
-                    b.Navigation("IsAUser");
                 });
 
             modelBuilder.Entity("TrainingWorker", b =>

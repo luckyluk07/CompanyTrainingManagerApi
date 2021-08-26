@@ -19,6 +19,7 @@ namespace CompanyTrainingManagerApi.Entities
         public DbSet<Training> Trainings { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
