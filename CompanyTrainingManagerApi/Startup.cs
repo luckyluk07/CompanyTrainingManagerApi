@@ -1,3 +1,4 @@
+using CompanyTrainingManagerApi.Authorization;
 using CompanyTrainingManagerApi.Entities;
 using CompanyTrainingManagerApi.Interfaces;
 using CompanyTrainingManagerApi.Middlewares;
@@ -7,6 +8,7 @@ using CompanyTrainingManagerApi.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -63,6 +65,11 @@ namespace CompanyTrainingManagerApi
             });
             #endregion
 
+            #region Authorization
+            services.AddAuthorization();
+            services.AddScoped<IAuthorizationHandler, ResourceOperationRequirementHandler>();
+            #endregion
+
             //register swagger generator
             services.AddSwaggerGen();
 
@@ -78,14 +85,16 @@ namespace CompanyTrainingManagerApi
             //using automapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //own CRUD services to controllers
+            //own services to controllers
             services.AddScoped<IWorkerService, WorkerService>();
             services.AddScoped<ITrainingDefinitionService, TrainingDefinitionService>();
             services.AddScoped<ITrainingService, TrainingService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IUserContextService, UserContextService>();
 
             //ready functionality to services
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            services.AddHttpContextAccessor();
 
             //validators
             services.AddScoped<IValidator<RegisterAccountDto>, UserRegistrationValidator>();

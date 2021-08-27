@@ -25,6 +25,10 @@ namespace CompanyTrainingManagerApi.Middlewares
                 context.Response.StatusCode = 400;
                 await context.Response.WriteAsync(badRequestException.Message);
             }
+            catch(ForbidException forbidException)
+            {
+                context.Response.StatusCode = 403;
+            }
             catch(Exception e)
             {
                 context.Response.StatusCode = 500;
